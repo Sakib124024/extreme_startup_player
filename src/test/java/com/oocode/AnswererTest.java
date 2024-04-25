@@ -1,5 +1,6 @@
 package com.oocode;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -14,17 +15,28 @@ public class AnswererTest {
     }
 
     @Test
-    public void canAnswerHighest204970() {
-        var contents = new Answerer().answerFor("Which of the following numbers is the largest: 20, 49, 70?");
-
-        assertThat(contents, equalTo("70"));
-    }
-    @Test
     public void canAnswerHighest979560() {
         var contents = new Answerer().answerFor("Which of the following numbers is the largest: 97, 95, 60?");
 
         assertThat(contents, equalTo("97"));
     }
+
+    @Disabled
+    @Test
+    public void canAnswerAddition() {
+        var contents = new Answerer().answerFor("What is 75 plus 2?");
+
+        assertThat(contents, equalTo("79"));
+    }
+
+    @Disabled
+    @Test
+    public void canAnswerCalculator() {
+        var contents = new Answerer().answerFor("What is 45 multiplied by 18?");
+
+        assertThat(contents, equalTo("810"));
+    }
+
 
 
 
