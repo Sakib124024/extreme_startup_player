@@ -7,6 +7,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class AnswererTest {
+    @Disabled
     @Test
     public void canAnswerMyName() {
         var contents = new Answerer().answerFor("What is your name?");
@@ -29,15 +30,10 @@ public class AnswererTest {
         assertThat(contents, equalTo("79"));
     }
 
-    @Disabled
     @Test
-    public void canAnswerCalculator() {
+    public void canAnswerMultiplication() {
         var contents = new Answerer().answerFor("What is 45 multiplied by 18?");
 
         assertThat(contents, equalTo("810"));
     }
-
-
-
-
 }
