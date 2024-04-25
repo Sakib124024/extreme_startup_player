@@ -1,6 +1,7 @@
 package com.oocode;
 import java.util.Arrays;
 
+
 public class Answerer {
     public String answerFor(String question) {
         if (question.startsWith("Which of the following numbers is the largest: ")){
@@ -24,6 +25,11 @@ public class Answerer {
             int base = Integer.parseInt(parts[0].replaceAll("[^0-9]", ""));
             int exponent = Integer.parseInt(parts[1].replaceAll("[^0-9]", ""));
             return String.valueOf(Math.round(Math.pow(base, exponent)));
+        }
+        if (question.contains("the scrabble score of")) {
+            String[] parts = question.split(" ");
+            ScrabbleScorer s= new ScrabbleScorer();
+            return s.calculateScore(parts[6]);
         }
         else if (question.contains("are primes")) {
             String[] numbers = question.replaceAll("[^0-9,]", "").split(",");
@@ -88,8 +94,6 @@ public class Answerer {
 
             return String.valueOf(maxNumber);
         }
-
-
 
         else {
             return "AN TEAM";

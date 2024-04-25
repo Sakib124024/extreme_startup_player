@@ -62,6 +62,13 @@ public class AnswererTest {
 
         assertThat(contents, equalTo("162"));
     }
+@Disabled
+    @Test
+    public void canAnswerScrabbleScore() {
+        var contents = new Answerer().answerFor("What is the scrabble score of september?");
+
+        assertThat(contents, equalTo("162"));
+    }
 
 
 
