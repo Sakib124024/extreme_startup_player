@@ -19,6 +19,13 @@ public class AnswererTest {
 
         assertThat(contents, equalTo("70"));
     }
+    @Test
+    public void canAnswerHighest979560() {
+        var contents = new Answerer().answerFor("Which of the following numbers is the largest: 97, 95, 60?");
+
+        assertThat(contents, equalTo("97"));
+    }
+
 
 
 }
