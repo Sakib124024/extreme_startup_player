@@ -24,7 +24,8 @@ public class Answerer {
             int base = Integer.parseInt(parts[0].replaceAll("[^0-9]", ""));
             int exponent = Integer.parseInt(parts[1].replaceAll("[^0-9]", ""));
             return String.valueOf(Math.round(Math.pow(base, exponent)));
-        } else if (question.contains("are primes")) {
+        }
+        else if (question.contains("are primes")) {
             String[] numbers = question.replaceAll("[^0-9,]", "").split(",");
             StringBuilder primes = new StringBuilder();
             for (String num : numbers) {
@@ -39,16 +40,35 @@ public class Answerer {
             String regexPattern="multiplied|plus|minus";
             String[] numbers = question.replace("?","").split(" ");
             if(question.contains("multiplied")){
-                var num1=Integer.parseInt(numbers[2]);
-                var num2=Integer.parseInt(numbers[5]);
-                var result=num1 * num2;
-                return String.valueOf(result);
+                int count=0;
+                for(String s:question.split(" ")){
+                    if(s.equals("multiplied")){
+                        count++;
+                    }
+                }
+                if(count==2){
+                    var num1=Integer.parseInt(numbers[2]);
+                    var num2=Integer.parseInt(numbers[5]);
+                    var num3=Integer.parseInt(numbers[7]);
+                    var result=num1 * num2 * num3;
+                    return String.valueOf(result);
+                }
+
             }
             else if(question.contains("plus")){
-                var num1=Integer.parseInt(numbers[2]);
-                var num2=Integer.parseInt(numbers[4]);
-                var result=num1 + num2;
-                return String.valueOf(result);
+                int count=0;
+                for(String s:question.split(" ")){
+                    if(s.equals("plus")){
+                        count++;
+                    }
+                }
+                if(count==2){
+                    var num1=Integer.parseInt(numbers[2]);
+                    var num2=Integer.parseInt(numbers[4]);
+                    var num3=Integer.parseInt(numbers[6]);
+                    var result=num1 + num2 + num3;
+                    return String.valueOf(result);
+                }
             }
             else if(question.contains("minus")){
                 var num1=Integer.parseInt(numbers[2]);

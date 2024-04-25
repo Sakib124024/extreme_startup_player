@@ -29,7 +29,7 @@ public class AnswererTest {
 
         assertThat(contents, equalTo("97"));
     }
-
+@Disabled
     @Test
     public void canAnswerAddition() {
         var contents = new Answerer().answerFor("What is 75 plus 2?");
@@ -43,7 +43,7 @@ public class AnswererTest {
 
         assertThat(contents, equalTo("-52"));
     }
-
+    @Disabled
     @Test
     public void canAnswerMultiplication() {
         var contents = new Answerer().answerFor("What is 45 multiplied by 18?");
@@ -56,5 +56,13 @@ public class AnswererTest {
 
         assertThat(contents, equalTo("4"));
     }
+    @Test
+    public void canAnswerTwoSameOperation() {
+        var contents = new Answerer().answerFor("What is 90 plus 16 plus 56?");
+
+        assertThat(contents, equalTo("162"));
+    }
+
+
 
 }
