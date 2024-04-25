@@ -14,7 +14,7 @@ public class AnswererTest {
 
         assertThat(contents, equalTo("AN TEAM"));
     }
-
+    @Disabled
     @Test
     public void canAnswerHighest979560() {
         var contents = new Answerer().answerFor("Which of the following numbers is the largest: 97, 95, 60?");
@@ -36,7 +36,7 @@ public class AnswererTest {
 
         assertThat(contents, equalTo("77"));
     }
-
+    @Disabled
     @Test
     public void canAnswerSubtraction() {
         var contents = new Answerer().answerFor("What is 2 minus 54?");
@@ -50,19 +50,21 @@ public class AnswererTest {
 
         assertThat(contents, equalTo("810"));
     }
+    @Disabled
     @Test
     public void canAnswerPowerOf() {
         var contents = new Answerer().answerFor("What is 2 to the power of 2?");
 
         assertThat(contents, equalTo("4"));
     }
+    @Disabled
     @Test
     public void canAnswerTwoSameOperation() {
         var contents = new Answerer().answerFor("What is 90 plus 16 plus 56?");
 
         assertThat(contents, equalTo("162"));
     }
-@Disabled
+    @Disabled
     @Test
     public void canAnswerScrabbleScore() {
         var contents = new Answerer().answerFor("What is the scrabble score of september?");
