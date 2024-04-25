@@ -12,4 +12,13 @@ public class AnswererTest {
 
         assertThat(contents, equalTo("AN TEAM"));
     }
+
+    @Test
+    public void canAnswerHighest204970() {
+        var contents = new Answerer().answerFor("Which of the following numbers is the largest: 20, 49, 70?");
+
+        assertThat(contents, equalTo("70"));
+    }
+
+
 }
