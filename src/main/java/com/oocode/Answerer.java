@@ -28,12 +28,16 @@ public class Answerer {
                 return String.valueOf(result);
             }
             else if(question.contains("plus")){
-
-
+                var num1=Integer.parseInt(numbers[2]);
+                var num2=Integer.parseInt(numbers[5]);
+                var result=num1 + num2;
+                return String.valueOf(result);
             }
             else if(question.contains("minus")){
-
-
+                var num1=Integer.parseInt(numbers[2]);
+                var num2=Integer.parseInt(numbers[5]);
+                var result=num1 - num2;
+                return String.valueOf(result);
             }
 
             int maxNumber = Integer.MIN_VALUE;

@@ -24,6 +24,14 @@ public class AnswererTest {
 
     @Disabled
     @Test
+    public void canAnswerPrimes() {
+        var contents = new Answerer().answerFor("Which of the following numbers are primes: 97, 95, 60?");
+
+        assertThat(contents, equalTo("97"));
+    }
+
+    @Disabled
+    @Test
     public void canAnswerAddition() {
         var contents = new Answerer().answerFor("What is 75 plus 2?");
 
