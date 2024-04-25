@@ -16,7 +16,24 @@ public class Answerer {
 
             return String.valueOf(maxNumber);
         }
-
+        if (question.startsWith("What is your name?")){
+            return "AN TEAM";
+        }
+        if (question.contains("to the power of")) {
+            String[] parts = question.split(" to the power of ");
+            int base = Integer.parseInt(parts[0].replaceAll("[^0-9]", ""));
+            int exponent = Integer.parseInt(parts[1].replaceAll("[^0-9]", ""));
+            return String.valueOf(Math.round(Math.pow(base, exponent)));
+        } else if (question.contains("are primes")) {
+            String[] numbers = question.replaceAll("[^0-9,]", "").split(",");
+            StringBuilder primes = new StringBuilder();
+            for (String num : numbers) {
+                if (isPrime(Integer.parseInt(num.trim()))) {
+                    primes.append(num).append(", ");
+                }
+            }
+            return primes.toString().isEmpty() ? "None of the numbers are primes" : primes.toString();
+        }
         if (question.startsWith("What is")){
             //"What is 45 multiplied by 18?");
             String regexPattern="multiplied|plus|minus";
@@ -51,11 +68,25 @@ public class Answerer {
 
             return String.valueOf(maxNumber);
         }
-        if (question.startsWith("What is your name?")){
-            return "AN TEAM";
-        }
+
+
+
         else {
             return "AN TEAM";
         }
+    }
+
+    private static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

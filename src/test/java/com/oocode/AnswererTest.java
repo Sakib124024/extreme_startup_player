@@ -50,4 +50,11 @@ public class AnswererTest {
 
         assertThat(contents, equalTo("810"));
     }
+    @Test
+    public void canAnswerPowerOf() {
+        var contents = new Answerer().answerFor("What is 2 to the power of 2?");
+
+        assertThat(contents, equalTo("4"));
+    }
+
 }
