@@ -29,13 +29,13 @@ public class Answerer {
             }
             else if(question.contains("plus")){
                 var num1=Integer.parseInt(numbers[2]);
-                var num2=Integer.parseInt(numbers[5]);
+                var num2=Integer.parseInt(numbers[4]);
                 var result=num1 + num2;
                 return String.valueOf(result);
             }
             else if(question.contains("minus")){
                 var num1=Integer.parseInt(numbers[2]);
-                var num2=Integer.parseInt(numbers[5]);
+                var num2=Integer.parseInt(numbers[4]);
                 var result=num1 - num2;
                 return String.valueOf(result);
             }

@@ -30,12 +30,18 @@ public class AnswererTest {
         assertThat(contents, equalTo("97"));
     }
 
-    @Disabled
     @Test
     public void canAnswerAddition() {
         var contents = new Answerer().answerFor("What is 75 plus 2?");
 
-        assertThat(contents, equalTo("79"));
+        assertThat(contents, equalTo("77"));
+    }
+
+    @Test
+    public void canAnswerSubtraction() {
+        var contents = new Answerer().answerFor("What is 2 minus 54?");
+
+        assertThat(contents, equalTo("-52"));
     }
 
     @Test
